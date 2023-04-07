@@ -1,9 +1,10 @@
 mysql:
   host: 127.0.0.1
   port: 3306
+  config: ""
   db: xl_db
   user: root
-  password: root
+  password: ""
   log_level: dev
 
 logger:
