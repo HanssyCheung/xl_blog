@@ -9,7 +9,7 @@ import (
 	"xl-go-blog/global"
 )
 
-//在这个里面读取yaml文件配置
+//在这个里面读取yaml文件配置，将基础的信息加载进来
 
 func InitConf() {
 	const ConfigFile = "settings.yaml"

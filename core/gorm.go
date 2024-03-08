@@ -2,7 +2,7 @@ package core
 
 import (
 	"fmt"
-	"gorm.io/driver/mysql"
+	"gorm.io/driver/mysql" //mysql驱动
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"log"

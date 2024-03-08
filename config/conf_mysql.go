@@ -3,12 +3,12 @@ package config
 import "strconv"
 
 type Mysql struct {
-	Host     string `yaml:"host"`
-	Port     int    `yaml:"port"`
-	Config   string `yaml:"config"` //高级配置，例如charset
-	DB       string `yaml:"db"`
-	User     string `yaml:"user"`
-	Password string `yaml:"password"`
+	Host     string `yaml:"host"`      //服务器地址
+	Port     int    `yaml:"port"`      //端口
+	Config   string `yaml:"config"`    //高级配置，例如charset
+	DB       string `yaml:"db"`        //数据库名
+	User     string `yaml:"user"`      //数据库用户名
+	Password string `yaml:"password"`  //数据库密码
 	LogLevel string `yaml:"log_level"` //日志等级，debug就是输出全部sql,dev,release线上环境
 }
 
