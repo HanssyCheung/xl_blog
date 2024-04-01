@@ -1,6 +1,6 @@
 package models
 
-//评论表
+//CommentModel 评论表
 type CommentModel struct {
 	MODEL
 	SubComments        []*CommentModel `gorm:"foreignKey:ParentCommentID" json:"sub_comments"`         //子评论列表
@@ -12,5 +12,5 @@ type CommentModel struct {
 	Article            ArticleModel    `gorm:"foreignKey:ArticleID" json:"article"`                    //关联的文章
 	ArticleID          uint            `json:"article_id"`                                             //文章id
 	User               UserModel       `json:"user"`                                                   //关联的用户
-	UserID             uint            `gorm:"size:10" json:"user_id"`                                 //评论的用户
+	UserID             uint            `json:"user_id"`                                                //评论的用户
 }
