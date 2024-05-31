@@ -5,6 +5,7 @@ import (
 	"xl-go-blog/models"
 )
 
+//MakeMigrations 自动迁移可以新增但不会删除
 func MakeMigrations() {
 	//fmt.Println("????")
 	var err error

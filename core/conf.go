@@ -29,7 +29,7 @@ func InitConf() {
 }
 
 func SetYaml() error {
-	byteData, err := yaml.Marshal(global.Config.SiteInfo)
+	byteData, err := yaml.Marshal(global.Config)
 	if err != nil {
 		return err
 	}

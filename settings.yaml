@@ -6,56 +6,16 @@ mysql:
   user: root
   password: ""
   log_level: dev
-
-local:
-  path: uploads/file
-  store_path: uploads/file
-
-es:
-  host: http://127.0.0.1
-  port: 9200
-  username: ""
-  password: ""
-
-jwt:
-  secret: xxx
-  expires: 48
-  issuer: xx
-
-qq:
-  app_id: "xx"
-  key: 48
-  issuer: xx
-
-email:
-  host: smtp.qq.com
-  port: 465
-  user: xxx@qq.com
-  password: xxx
-  default_from_email: 吃吃吃
-  use_ssl: xx
-  user_tls: xx
-
-qi_niu:
-  access_key: UMM-xx-FdRIf-xx
-  secret-key: xx
-  bucket: chichichi
-  cdn: xx://xx.xx.com/
-  zone: xx
-  size: 5
-
 logger:
-  level: warning #等级
-  prefix: '[xl]' #前缀
-  director: log  #存放的目录
-  show_line: true #是否显示行号
-  log_in_console: true #是否显示文件的路径
-
+  level: warning
+  prefix: '[xl]'
+  director: log
+  show_line: true
+  log_in_console: true
 system:
-  host: "0.0.0.0"
+  host: 0.0.0.0
   port: 8080
-  env: release
-
+  env: debug
 site_info:
   create_at: "2023-02-12"
   bei_an: 沪ICP
@@ -73,3 +33,26 @@ site_info:
   bilibili_url: https://space.bilibili.com/359151217
   gitee_url: https://gitee.com/fengfengzhidao
   github_url: https://github.com/fengfengzhidao/
+qq:
+  app_id: ""
+  key: ""
+  redirect: ""
+qi_niu:
+  access_key: UMM-xx-FdRIf-xx
+  secret_key: ""
+  bucket: chichichi
+  cdn: xx://xx.xx.com/
+  zone: xx
+  size: 5
+email:
+  host: ""
+  port: 123456
+  user: ""
+  password: ""
+  default_from_email: ""
+  use_ssl: false
+  user_tls: false
+jwt:
+  secret: xxx
+  expires: 48
+  issuer: xx
