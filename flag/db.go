@@ -14,6 +14,7 @@ func MakeMigrations() {
 	//生成四张表结构
 	err = global.DB.Set("gorm:table_options", "ENGINE=InnoDB").
 		AutoMigrate(
+			&models.MODEL{},
 			&models.BannerModel{},
 			&models.TagModel{},
 			&models.MessageModel{},
