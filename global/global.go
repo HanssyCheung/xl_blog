@@ -3,6 +3,7 @@ package global
 import (
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 	"xl-go-blog/config"
 )
 
@@ -27,7 +28,8 @@ var (
 //用来存放全局变量，保存配置文件，方便在main中调用
 //全局变量首字母大写
 var (
-	Config *config.Config
-	DB     *gorm.DB
-	Log    *logrus.Logger
+	Config   *config.Config
+	DB       *gorm.DB
+	Log      *logrus.Logger
+	MysqlLog logger.Interface
 )
