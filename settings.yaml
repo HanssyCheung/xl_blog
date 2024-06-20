@@ -41,12 +41,12 @@ qq:
   key: ""
   redirect: ""
 qi_niu:
-  enable: false
-  access_key: UMM-xx-FdRIf-xx
-  secret_key: ""
-  bucket: chichichi
+  enable: true
+  access_key: "krvBjL8QBTvnSoFvx7s5duLbERyBGW39doxoRR1q"
+  secret_key: "6HT9O34dSFNckSxCJZxgcfPMJsOY6k-kKequ6yX5"
+  bucket: forbucket
   cdn: xx://xx.xx.com/
-  zone: xx
+  zone: z0
   size: 5
 email:
   host: ""

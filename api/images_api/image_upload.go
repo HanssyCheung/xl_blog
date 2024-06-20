@@ -10,7 +10,9 @@ import (
 	"path/filepath"
 	"xl-go-blog/global"
 	"xl-go-blog/models"
+	"xl-go-blog/models/ctype"
 	"xl-go-blog/models/res"
+	"xl-go-blog/plugins/qiniu"
 	"xl-go-blog/utils"
 )
 
@@ -90,6 +92,25 @@ func (ImagesApi) ImageUploadView(c *gin.Context) {
 			})
 			continue
 		}
+		if global.Config.QiNiu.Enable {
+			filePath, err = qiniu.UploadImage(byteData, fileName, "gvb")
+			if err != nil {
+				global.Log.Error(err)
+				continue
+			}
+			resList = append(resList, FileUploadResponse{
+				FileName:  filePath,
+				IsSuccess: true,
+				Msg:       "上传七牛成功",
+			})
+			global.DB.Create(&models.BannerModel{
+				Path:      filePath,
+				Hash:      imageHash,
+				Name:      fileName,
+				ImageType: ctype.QiNiu,
+			})
+			continue
+		}
 
 		err = c.SaveUploadedFile(file, filePath)
 		if err != nil {
@@ -103,9 +124,10 @@ func (ImagesApi) ImageUploadView(c *gin.Context) {
 		}
 		//图片入库
 		global.DB.Create(&models.BannerModel{
-			Path: filePath,
-			Hash: imageHash,
-			Name: fileName,
+			Path:      filePath,
+			Hash:      imageHash,
+			Name:      fileName,
+			ImageType: ctype.Local,
 		})
 		resList = append(resList, FileUploadResponse{
 			FileName:  filePath,
